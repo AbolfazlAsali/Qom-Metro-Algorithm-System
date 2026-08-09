@@ -1,4 +1,4 @@
-#include "../../include/Structures/Min_Heap.hpp"
+#include "Structures/Min_Heap.hpp"
 
 #include <algorithm>
 #include <cassert>
