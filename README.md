@@ -5,7 +5,7 @@
 ### **Metro Network Simulation & Algorithmic Analysis System**
 
 
-<img src="docs/images/Qom_to_NewYork.png" width="50%" alt="Qom_to_NewYork">
+<img src="docs/images/Qom_to_NewYork.png" alt="Qom_to_NewYork">
 
 *A modern C++ implementation of classical graph algorithms through a unified metro management system.*
 
@@ -146,6 +146,7 @@ QomMetro/
 ├── docs/
 ├── tests/
 ├── output/
+├── third_party/
 └── CMakeLists.txt
 ```
 
