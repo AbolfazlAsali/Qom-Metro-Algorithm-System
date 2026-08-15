@@ -23,6 +23,39 @@ void Graph::add_edge(int from, Edge edge){
     adjacency_[from].push_back(std::move(edge));
 }
 
+
+bool Graph::set_edge_capacity(int from, int to, double capacity){
+
+    auto it = adjacency_.find(from);
+    if(it == adjacency_.end()){
+        return false;
+    }
+    for(Edge& edge : it->second){
+        if(edge.to() == to){
+            edge.set_capacity(capacity);
+            return true;
+        }
+    }
+    return false;
+}
+
+bool Graph::set_edge_bonus(int from, int to, double bonus){
+
+    auto it = adjacency_.find(from);
+    if(it == adjacency_.end()){
+        return false;
+    }
+    for(Edge& edge : it->second){
+        if(edge.to() == to){
+            edge.set_bonus_weight(bonus);
+            return true;
+        }
+    }
+    return false;
+}
+
+
+
 int Graph::station_count() const{
     return static_cast<int>(stations_.size());
 }

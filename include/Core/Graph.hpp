@@ -21,6 +21,10 @@ public:
     void add_station(Station station);
     void add_edge(int from, Edge edge);
 
+
+    bool set_edge_capacity(int from, int to, double capacity);
+    bool set_edge_bonus(int from, int to, double bonus);
+
     // --- IGraph interface ---
     int station_count() const override;
     bool has_station(int stationId) const override;
