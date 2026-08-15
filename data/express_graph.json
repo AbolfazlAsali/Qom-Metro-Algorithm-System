@@ -1,0 +1,10 @@
+{
+  "edges": [
+    { "from": 19, "to": 18, "distance_km": 2.0, "time_min": 3 },
+    { "from": 18, "to": 0,  "distance_km": 3.0, "time_min": 4 },
+    { "from": 0,  "to": 1,  "distance_km": 2.5, "time_min": 4 },
+    { "from": 1,  "to": 2,  "distance_km": 6.0, "time_min": 8 },
+    { "from": 2,  "to": 6,  "distance_km": 1.5, "time_min": 3 },
+    { "from": 6,  "to": 7,  "distance_km": 1.0, "time_min": 2 }
+  ]
+}
