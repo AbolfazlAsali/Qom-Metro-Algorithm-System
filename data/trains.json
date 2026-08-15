@@ -1,0 +1,12 @@
+{
+  "trains": [
+    { "id": 1, "arrival_min": 0,  "departure_min": 10, "delay_min": 2 },
+    { "id": 2, "arrival_min": 5,  "departure_min": 15, "delay_min": 8 },
+    { "id": 3, "arrival_min": 10, "departure_min": 20, "delay_min": 0 },
+    { "id": 4, "arrival_min": 12, "departure_min": 18, "delay_min": 5 },
+    { "id": 5, "arrival_min": 20, "departure_min": 30, "delay_min": 1 },
+    { "id": 6, "arrival_min": 25, "departure_min": 35, "delay_min": 12 },
+    { "id": 7, "arrival_min": 30, "departure_min": 40, "delay_min": 3 },
+    { "id": 8, "arrival_min": 32, "departure_min": 38, "delay_min": 0 }
+  ]
+}
