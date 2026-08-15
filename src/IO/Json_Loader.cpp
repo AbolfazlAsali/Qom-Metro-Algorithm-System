@@ -91,7 +91,10 @@ void load_edges(const json& edges_json, Graph& graph, bool bidirectional){
         double time_Min = Edge_Json.at("time_min").get<double>();
 
         graph.add_edge(from, Edge(to, distance_Km, time_Min));
-        graph.add_edge(to, Edge(from, distance_Km, time_Min)); 
+
+        if(bidirectional){
+            graph.add_edge(to, Edge(from, distance_Km, time_Min)); 
+        }
     }
 }
 
