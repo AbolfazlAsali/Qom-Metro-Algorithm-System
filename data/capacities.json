@@ -1,0 +1,66 @@
+{
+  "capacities": [
+    { "from": 19, "to": 0,  "capacity": 900 },
+    { "from": 0,  "to": 19, "capacity": 900 },
+
+    { "from": 0,  "to": 1,  "capacity": 1000 },
+    { "from": 1,  "to": 0,  "capacity": 1000 },
+
+    { "from": 1,  "to": 2,  "capacity": 1200 },
+    { "from": 2,  "to": 1,  "capacity": 1200 },
+
+    { "from": 2,  "to": 3,  "capacity": 900 },
+    { "from": 3,  "to": 2,  "capacity": 900 },
+
+    { "from": 3,  "to": 4,  "capacity": 800 },
+    { "from": 4,  "to": 3,  "capacity": 800 },
+
+    { "from": 4,  "to": 5,  "capacity": 500 },
+    { "from": 5,  "to": 4,  "capacity": 500 },
+
+    { "from": 2,  "to": 6,  "capacity": 1100 },
+    { "from": 6,  "to": 2,  "capacity": 1100 },
+
+    { "from": 6,  "to": 7,  "capacity": 700 },
+    { "from": 7,  "to": 6,  "capacity": 700 },
+
+    { "from": 6,  "to": 8,  "capacity": 800 },
+    { "from": 8,  "to": 6,  "capacity": 800 },
+
+    { "from": 8,  "to": 9,  "capacity": 600 },
+    { "from": 9,  "to": 8,  "capacity": 600 },
+
+    { "from": 2,  "to": 10, "capacity": 850 },
+    { "from": 10, "to": 2,  "capacity": 850 },
+
+    { "from": 10, "to": 11, "capacity": 700 },
+    { "from": 11, "to": 10, "capacity": 700 },
+
+    { "from": 11, "to": 12, "capacity": 650 },
+    { "from": 12, "to": 11, "capacity": 650 },
+
+    { "from": 12, "to": 13, "capacity": 600 },
+    { "from": 13, "to": 12, "capacity": 600 },
+
+    { "from": 10, "to": 13, "capacity": 650 },
+    { "from": 13, "to": 10, "capacity": 650 },
+
+    { "from": 4,  "to": 14, "capacity": 750 },
+    { "from": 14, "to": 4,  "capacity": 750 },
+
+    { "from": 14, "to": 15, "capacity": 700 },
+    { "from": 15, "to": 14, "capacity": 700 },
+
+    { "from": 14, "to": 16, "capacity": 500 },
+    { "from": 16, "to": 14, "capacity": 500 },
+
+    { "from": 6,  "to": 17, "capacity": 600 },
+    { "from": 17, "to": 6,  "capacity": 600 },
+
+    { "from": 0,  "to": 18, "capacity": 800 },
+    { "from": 18, "to": 0,  "capacity": 800 },
+
+    { "from": 15, "to": 5,  "capacity": 450 },
+    { "from": 5,  "to": 15, "capacity": 450 }
+  ]
+}
