@@ -1,0 +1,7 @@
+{
+  "incentives": [
+    { "from": 4,  "to": 14, "bonus": -1.0 },
+    { "from": 14, "to": 16, "bonus": -0.5 },
+    { "from": 6,  "to": 17, "bonus": -0.8 }
+  ]
+}
