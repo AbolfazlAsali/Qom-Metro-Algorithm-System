@@ -10,6 +10,7 @@ struct Train{
     int id;
     double arrival_min;   // arrival time, in minutes from some reference point
     double departure_min; // departure time, in minutes from the same reference point
+    double delay_min = 0.0;
 };
 
 // Result of allocating trains to the shared platform.
