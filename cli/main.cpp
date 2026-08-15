@@ -8,6 +8,8 @@
 #include "Algorithms/Dijkstra.hpp"
 #include "Algorithms/Kruskal.hpp"
 #include "Algorithms/Prim.hpp"
+#include "Algorithms/Edmonds_Karp.hpp"
+#include "Algorithms/Ford_Fulkerson.hpp"
 #include "Core/Metro_System.hpp"
 #include "Core/Weight_Type.hpp"
 #include "IO/Json_Loader.hpp"
@@ -119,7 +121,7 @@ void handle_max_flow(const Metro_System& system){
 
     auto result = system.compute_max_flow(source, sink);
     cout << "Max flow: " << result.max_flow << "\n";
-    cout << "(Note: edge capacities default_ to unlimited until data/capacities.json\n"
+    cout << "(Note: edge capacities default to unlimited until data/capacities.json\n"
               << " is loaded and wired in -- see README.md, open item on T4.2 schema.)\n";
 }
 
@@ -356,6 +358,30 @@ void handle_compare_dijkstra_Astar(const Metro_System& system){
               << ", " << astar_ms << " ms\n";
 }
 
+void handle_compare_max_flow(const Metro_System& system){
+
+    int source = readInt("Source station id: ");
+    int sink = readInt("Sink station id: ");
+
+    QomMetro::Algorithms::Ford_Fulkerson ford_fulkerson;
+    QomMetro::Algorithms::Edmonds_Karp edmonds_karp;
+    QomMetro::Utils::Timer timer;
+
+    timer.start();
+    auto ff_Result = ford_fulkerson.run(system.graph(), source, sink);
+    timer.stop();
+    double ff_ms = timer.elapsed_milli_seconds();
+
+    timer.start();
+    auto ek_result = edmonds_karp.run(system.graph(), source, sink);
+    timer.stop();
+    double ek_ms = timer.elapsed_milli_seconds();
+
+    cout << "Ford-Fulkerson (DFS):  max flow " << ff_Result.max_flow
+              << ", " << ff_ms << " ms\n";
+    cout << "Edmonds-Karp (BFS):    max flow " << ek_result.max_flow
+              << ", " << ek_ms << " ms\n";
+}
 
 void print_menu(){
 
@@ -377,6 +403,7 @@ void print_menu(){
               << "15. Place emergency teams (T4.4, bonus)\n"
               << "16. Search station name (T4.6)\n"
               << "17. Compare Dijkstra vs AStar (Round 5)\n"
+              << "18. Compare Ford-Fulkerson vs Edmonds-Karp (T4.2)\n"
               << "0.  Exit\n"
               << "Choice: ";
 }
@@ -424,6 +451,7 @@ int main(){
                 case 15: handle_emergency_teams(system); break;
                 case 16: handle_search(system); break;
                 case 17: handle_compare_dijkstra_Astar(system); break;
+                case 18: handle_compare_max_flow(system); break;
                 case 0:  return 0;
                 default: cout << "Unknown choice.\n"; break;
             }
