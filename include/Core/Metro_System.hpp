@@ -27,7 +27,10 @@ public:
     Metro_System(
         const IO::File_Loader& loader,
         const std::string& stations_file_path,
-        const std::string& edges_file_path);
+        const std::string& edges_file_path,
+        const std::string& capacities_file_path = "",
+        const std::string& incentives_file_path = ""
+    );
 
    
     Algorithms::Reachability_Result check_reachability(int from, int to) const;

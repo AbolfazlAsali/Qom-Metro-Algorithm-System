@@ -8,10 +8,19 @@ Metro_System::Metro_System(
     
     const IO::File_Loader& loader,
     const string& stations_file_path,
-    const string& edges_file_path)
+    const string& edges_file_path,
+    const string& capacities_file_path,
+    const string& incentives_file_path)
     : graph_(loader.load_Graph(stations_file_path, edges_file_path)),
       routing_service_(default_reachability_, default_shortest_path_),
       network_service_(default_mst_, default_max_flow_) {
+
+    if(!capacities_file_path.empty()){
+        loader.load_Capacities(capacities_file_path, *graph_);
+    }
+    if(!incentives_file_path.empty()){
+        loader.load_Incentives(incentives_file_path, *graph_);
+    }
 
 }
 
