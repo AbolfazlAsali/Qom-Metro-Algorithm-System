@@ -1,0 +1,24 @@
+{
+  "stations": [
+    { "id": 0,  "name": "Qaleh Kamkar Station" },
+    { "id": 1,  "name": "Keshavarz Square Station" },
+    { "id": 2,  "name": "Motahhari Square Station" },
+    { "id": 3,  "name": "Nekouei Hospital Station" },
+    { "id": 4,  "name": "Baqiyatollah Square Station" },
+    { "id": 5,  "name": "Jamkaran Holy Mosque Station" },
+    { "id": 6,  "name": "Hazrat-e Masoumeh Holy Shrine Station" },
+    { "id": 7,  "name": "Arg-e Salariyeh Station" },
+    { "id": 8,  "name": "Darvazeh Ray Station" },
+    { "id": 9,  "name": "Bajak Station" },
+    { "id": 10, "name": "Niroogah Station" },
+    { "id": 11, "name": "Sadeghieh Station" },
+    { "id": 12, "name": "Chehel Derakht Station" },
+    { "id": 13, "name": "Amin Abad Station" },
+    { "id": 14, "name": "Pardisan Station" },
+    { "id": 15, "name": "Qom University Station" },
+    { "id": 16, "name": "Ghadir Forest Park Station" },
+    { "id": 17, "name": "Fadak Park Station" },
+    { "id": 18, "name": "Qom Railway Station" },
+    { "id": 19, "name": "Qom Passenger Terminal Station" }
+  ]
+}
