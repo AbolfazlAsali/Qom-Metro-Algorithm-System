@@ -140,13 +140,11 @@ Current planned implementation:
 ```
 QomMetro/
 │
+├── cli/
 ├── include/
 ├── src/
 ├── data/
 ├── docs/
-├── tests/
-├── output/
-├── third_party/
 └── CMakeLists.txt
 ```
 
@@ -214,24 +212,6 @@ The repository contains detailed documentation including
 - Algorithm Comparisons
 
 All documentation can be found inside the **docs/** directory.
-
----
-
-# 🧪 Testing
-
-Each module is tested independently.
-
-```
-tests/
-
-GraphTests
-RoutingTests
-MSTTests
-FlowTests
-SimulationTests
-```
-
-The goal is to verify correctness while keeping implementations independent and reusable.
 
 ---
 
