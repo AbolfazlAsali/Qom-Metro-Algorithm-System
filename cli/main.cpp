@@ -383,27 +383,41 @@ void handle_compare_max_flow(const Metro_System& system){
               << ", " << ek_ms << " ms\n";
 }
 
+
+void clear_screen(){
+    // cout << "\033[2J\033[H" << flush;
+    system("clear");
+}
+void wait_for_enter(){
+
+    cout << "\nPress Enter to continue...";
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin.get();
+}
+
+
 void print_menu(){
 
     cout << "\n=== QomMetro CLI ===\n"
-              << "1.  List stations\n"
-              << "2.  Check reachability (T1.2)\n"
-              << "3.  Find shortest path (T1.3, Dijkstra)\n"
-              << "4.  Build minimum spanning tree (T2.1, Kruskal)\n"
-              << "5.  Compare Kruskal vs Prim (T2.1)\n"
-              << "6.  Express line shortest path (T2.3)\n"
-              << "7.  Shortest path with incentives / negative-cycle check (T2.4)\n"
-              << "8.  Platform allocation demo (T3.1)\n"
-              << "9.  Dispatch queue demo (T3.2)\n"
-              << "10. Operational statistics (T3.3)\n"
-              << "11. Passenger arrival simulation (T3.4)\n"
-              << "12. Precomputed shortest path (T4.1, Floyd-Warshall)\n"
-              << "13. Compute max flow (T4.2)\n"
-              << "14. Find critical stations / bridges (T4.3)\n"
-              << "15. Place emergency teams (T4.4, bonus)\n"
-              << "16. Search station name (T4.6)\n"
-              << "17. Compare Dijkstra vs AStar (Round 5)\n"
-              << "18. Compare Ford-Fulkerson vs Edmonds-Karp (T4.2)\n"
+            //   << "1.  List stations\n"
+              << "1.  Check reachability (T1.2)\n"
+              << "2.  Find shortest path (T1.3, Dijkstra)\n"
+              << "3.  Build minimum spanning tree (T2.1, Kruskal)\n"
+              << "4.  Compare Kruskal vs Prim (T2.1)\n"
+              << "5.  Express line shortest path (T2.3)\n"
+              << "6.  Shortest path with incentives / negative-cycle check (T2.4)\n"
+              << "7.  Platform allocation demo (T3.1)\n"
+              << "8.  Dispatch queue demo (T3.2)\n"
+              << "9.  Operational statistics (T3.3)\n"
+              << "10. Passenger arrival simulation (T3.4)\n"
+              << "11. Precomputed shortest path (T4.1, Floyd-Warshall)\n"
+              << "12. Compute max flow (T4.2)\n"
+              << "13. Find critical stations / bridges (T4.3)\n"
+              << "14. Place emergency teams (T4.4, bonus)\n"
+              << "15. Search station name (T4.6)\n"
+              << "16. Compare Dijkstra vs AStar (Round 5)\n"
+              << "17. Compare Ford-Fulkerson vs Edmonds-Karp (T4.2)\n"
               << "0.  Exit\n"
               << "Choice: ";
 }
@@ -430,31 +444,35 @@ int main(){
 
         while(true){
 
+            clear_screen();
+            print_stations(system);
             print_menu();
             int choice = readInt("");
 
             switch(choice){
-                case 1:  print_stations(system); break;
-                case 2:  handle_reachability(system); break;
-                case 3:  handle_shortest_path(system); break;
-                case 4:  handle_mst(system); break;
-                case 5:  handle_compare_mst(system); break;
-                case 6:  handle_express_line(*express_graph); break;
-                case 7:  handle_bellman_ford(system); break;
-                case 8:  handle_platform_allocation(loader); break;
-                case 9:  handle_dispatch_queue(loader); break;
-                case 10: handle_statistics(system, loader); break;
-                case 11: handle_passenger_simulation(); break;
-                case 12: handle_precomputed_shortest_path(system); break;
-                case 13: handle_max_flow(system); break;
-                case 14: handle_critical_stations(system); break;
-                case 15: handle_emergency_teams(system); break;
-                case 16: handle_search(system); break;
-                case 17: handle_compare_dijkstra_Astar(system); break;
-                case 18: handle_compare_max_flow(system); break;
+                // case 1:  print_stations(system); break;
+                case 1:  handle_reachability(system); break;
+                case 2:  handle_shortest_path(system); break;
+                case 3:  handle_mst(system); break;
+                case 4:  handle_compare_mst(system); break;
+                case 5:  handle_express_line(*express_graph); break;
+                case 6:  handle_bellman_ford(system); break;
+                case 7:  handle_platform_allocation(loader); break;
+                case 8:  handle_dispatch_queue(loader); break;
+                case 9:  handle_statistics(system, loader); break;
+                case 10: handle_passenger_simulation(); break;
+                case 11: handle_precomputed_shortest_path(system); break;
+                case 12: handle_max_flow(system); break;
+                case 13: handle_critical_stations(system); break;
+                case 14: handle_emergency_teams(system); break;
+                case 15: handle_search(system); break;
+                case 16: handle_compare_dijkstra_Astar(system); break;
+                case 17: handle_compare_max_flow(system); break;
                 case 0:  return 0;
                 default: cout << "Unknown choice.\n"; break;
             }
+
+            wait_for_enter();
         }
     } 
     catch(const exception& e){
